@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cdevtech.contacts.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <Button
+        android:id="@+id/add_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Contact"
+        android:enabled="false"
+        android:onClick="onAddContact" />
+
+    <Button
+        android:id="@+id/get_contacts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Contacts"
+        android:enabled="false"
+        android:onClick="onGetContacts"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/name_edit_text"
+        android:layout_alignEnd="@+id/name_edit_text" />
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_contact_button"
+          android:hint="Name" />
+
+    <EditText
+        android:id="@+id/email_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_edit_text"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/edit_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Contact"
+        android:enabled="false"
+        android:layout_below="@+id/email_edit_text"
+        android:onClick="onEditContact"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/delete_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Contact"
+        android:enabled="false"
+        android:onClick="onDeleteContact"
+        android:layout_alignTop="@+id/edit_contact_button"
+        android:layout_alignRight="@+id/id_text_field"
+        android:layout_alignEnd="@+id/id_text_field" />
+
+    <EditText
+        android:id="@+id/id_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delete_contact_button"
+        android:singleLine="false"
+        android:hint="Contact ID"
+        android:numeric="integer"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/contacts_list_text_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:lines="6"
+        android:layout_below="@+id/id_text_field"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:nestedScrollingEnabled="true" />
+
+    <Button
+        android:id="@+id/create_database_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Database"
+        android:layout_below="@+id/contacts_list_text_text"
+          android:onClick="onCreateDatabase" />
+
+    <Button
+        android:id="@+id/delete_database_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Database"
+        android:enabled="false"
+         android:onClick="onDeleteDatabase"
+        android:layout_below="@+id/contacts_list_text_text"
+        android:layout_alignRight="@+id/contacts_list_text_text"
+        android:layout_alignEnd="@+id/contacts_list_text_text" />
+</RelativeLayout>
